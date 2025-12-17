@@ -6,7 +6,7 @@ import Link, { LinkProps } from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 
 // Utility Imports
-import { Menu, ArrowRightSquare } from "lucide-react";
+import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 // Component Imports
@@ -21,8 +21,8 @@ import {
 } from "@/components/ui/Sheet";
 import { Separator } from "@/components/ui/Separator";
 
-import { mainMenu, contentMenu } from "@/menu.config";
-import { siteConfig } from "@/site.config";
+import { mainMenu } from "@/types/menu.config";
+import { siteConfig } from "@/types/site.config";
 
 export function MobileNav() {
   const [open, setOpen] = React.useState(false);
@@ -56,22 +56,17 @@ export function MobileNav() {
             <h3 className="text-sx mt-6 uppercase">Menu</h3>
             <Separator />
             {mainMenu.map((item) => (
-              <MobileLink 
-                key={item.href} 
-                href={item.href} 
-                onOpenChange={setOpen} 
-                className={`py-2 px-4 rounded-md ${pathname === item.href ? "bg-accent" : ""}`}
+              <MobileLink
+                key={item.href}
+                href={item.href}
+                onOpenChange={setOpen}
+                className={`py-2 px-4 rounded-md ${
+                  pathname === item.href ? "bg-accent" : ""
+                }`}
               >
                 {item.label}
               </MobileLink>
             ))}
-            {/* <h3 className="text-small pt-6">Blog Menu</h3>
-            <Separator />
-            {Object.entries(contentMenu).map(([key, href]) => (
-              <MobileLink key={key} href={href} onOpenChange={setOpen}>
-                {key.charAt(0).toUpperCase() + key.slice(1)}
-              </MobileLink>
-            ))} */}
           </div>
         </ScrollArea>
       </SheetContent>

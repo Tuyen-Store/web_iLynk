@@ -39,11 +39,6 @@ export const servicesMenu = [
     description: "Thiết kế theo yêu cầu",
     href: "/dich-vu/thiet-ke-theo-yeu-cau",
   },
-  {
-    label: "Checkin sự kiện online",    
-    description: "Checkin sự kiện online",
-    href: "/dich-vu/checkin-suc-kien-online",
-  },
 ];
 
 export const contentMenu = {

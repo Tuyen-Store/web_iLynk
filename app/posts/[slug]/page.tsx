@@ -9,7 +9,7 @@ import {
 import { Section, Container, Article, Prose } from "@/components/craft";
 import { badgeVariants } from "@/components/ui/Badge";
 import { cn } from "@/lib/utils";
-import { siteConfig } from "@/site.config";
+import { siteConfig } from "@/types/site.config";
 
 import Link from "next/link";
 import { notFound } from "next/navigation";

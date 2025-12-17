@@ -24,6 +24,12 @@
     "paths": {
       "@/*": [
         "./*"
+      ],
+      "@assets/*": [
+        "./assets/*"
+      ],
+      "@fonts/*": [
+        "./assets/fonts/*"
       ]
     },
     "target": "ES2017"
@@ -35,7 +41,7 @@
     ".next/types/**/*.ts",
     "wp.config.ts",
     ".next/dev/types/**/*.ts"
-, "components/ui/LumaButton.js"  ],
+  ],
   "exclude": [
     "node_modules"
   ]

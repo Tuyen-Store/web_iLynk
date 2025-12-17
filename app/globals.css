@@ -15,9 +15,13 @@
 
 @theme {
     --font-sans:
-        var(--font-sans), ui-sans-serif, system-ui, sans-serif,
-        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-        "Noto Color Emoji";
+        var(--font-geomanist);
+
+    --font-heading:
+        var(--font-geomanist);
+        
+    --font-body:
+        var(--font-geomanist);
 
     --color-border: hsl(var(--border));
     --color-input: hsl(var(--input));
@@ -113,7 +117,7 @@
         --popover: 0 0% 100%;
         --popover-foreground: 0 0% 3.9%;
 
-        --primary: 0 0% 9%;
+        --primary: 38 100% 55%;
         --primary-foreground: 0 0% 98%;
 
         --secondary: 0 0% 96.1%;
@@ -133,6 +137,9 @@
         --ring: 0 0% 3.9%;
 
         --radius: 0.5rem;
+
+        --heading: 12 7% 13%;
+        --body: 248 4% 44%;
     }
 
     .dark {
@@ -174,4 +181,11 @@
     body {
         @apply bg-background text-foreground;
     }
+}
+
+.scrollbar-custom {
+    @apply max-h-100 overflow-y-auto
+    [&::-webkit-scrollbar]:w-1
+    [&::-webkit-scrollbar-track]:bg-gray-200
+    [&::-webkit-scrollbar-thumb]:bg-primary;
 }
