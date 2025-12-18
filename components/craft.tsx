@@ -182,8 +182,13 @@ const styles = {
     article: "max-w-prose",
     container: "container mx-auto p-4 sm:p-8",
     section: "py-8 md:py-12",
+    sectionHero: "min-h-[480px] lg:min-h-[80vh]",
+
   },
 };
+
+// Export for re-use in other components (e.g. Hero section height presets)
+export const craftStyles = styles;
 
 // Combine all typography styles
 const baseTypographyStyles = [
@@ -348,3 +353,15 @@ export const Box = ({
     </div>
   );
 };
+
+export const DesktopShow = ({ children, className }: BaseProps) => (
+  <div className={cn("hidden lg:block", className)}>
+    {children}
+    </div>
+);
+
+export const DesktopHide = ({ children, className }: BaseProps) => (
+  <div className={cn("block lg:hidden", className)}>
+    {children}
+  </div>
+);

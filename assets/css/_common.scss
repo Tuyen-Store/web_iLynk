@@ -1,0 +1,131 @@
+.bg-linear-primary-top-bottom {
+    background-image: linear-gradient(165deg, var(--color-primary) 0%, #F2295B00 51%);
+}
+
+/* Hamburger Menu */
+.hamburger-box {
+    display: inline-block;
+    height: 20px;
+    position: relative;
+    width: 40px;
+    padding: 12px 15px;
+
+    .hamburger-inner {
+        margin-left: 3px;
+        top: 16px;
+    }
+
+    .hamburger-inner,
+    .hamburger-inner:after,
+    .hamburger-inner:before {
+        background-color: var(--color-body);
+        border-radius: 4px;
+        height: 2px;
+        position: absolute;
+        width: 24px;
+        transition: all 0.15s ease;
+    }
+
+    .hamburger-inner:after,
+    .hamburger-inner:before {
+        display: block;
+        content: "";
+    }
+
+    .hamburger-inner:before {
+        top: -9px;
+    }
+
+    .hamburger-inner:after {
+        bottom: -9px;
+    }
+
+    .hamburger-inner {
+        width: 16px;
+    }
+
+    .hamburger-inner:after {
+        width: 24px;
+    }
+
+    .hamburger-inner:before {
+        width: 24px;
+    }
+
+    &:hover .hamburger-inner,
+    &:hover .hamburger-inner:after,
+    &:hover .hamburger-inner:before {
+        height: 2px;
+        background-color: var(--color-body);
+    }
+
+    &:hover .hamburger-inner {
+        width: 24px;
+    }
+
+    &:hover .hamburger-inner:after {
+        width: 16px;
+    }
+
+    &:hover .hamburger-inner:before {
+        width: 16px;
+    }
+}
+
+#tm-nav-mobile {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    -webkit-transform: translate(0, -50%);
+    -moz-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .tm-nav-mobile-button {
+        width: 34px;
+        height: 20px;
+        position: relative;
+        cursor: pointer;
+
+
+        &:before,
+        &:after,
+        span {
+            content: "";
+            background-color: var(--color-body);
+            height: 2px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+        }
+
+        &:before {
+            top: 0;
+            width: 24px;
+        }
+
+        &:after {
+            bottom: 0;
+            width: 24px;
+        }
+
+        span {
+            top: 9px;
+            width: 100%;
+        }
+
+        &.active:before,
+        &.active:after {
+            width: 100%;
+        }
+    }
+}
+
+button {
+    cursor: pointer;
+}

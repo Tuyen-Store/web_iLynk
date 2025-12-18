@@ -8,8 +8,8 @@ import { Analytics } from "@vercel/analytics/react";
 import { siteConfig } from "@/types/site.config";
 
 import type { Metadata } from "next";
-import Nav from "@/components/ui/Header";
 import Footer from "@/components/ui/Footer";
+import Header from "@/components/ui/Header";
 
 const font = localFont({
   src: [
@@ -51,7 +51,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Nav />
+          <Header />
           {children}
           <Footer />
         </ThemeProvider>

@@ -5,8 +5,40 @@ export const mainMenu = [
     href: "/",
   },
   {
+    label: "Giới thiệu",
+    href: "/gioi-thieu",
+    children: [
+      {
+        label: "Giới thiệu",
+        href: "/gioi-thieu/gioi-thieu",
+      },
+      {
+        label: "Sự kiện",
+        href: "/gioi-thieu/su-kien",
+      },
+    ],
+  },
+  {
     label: "Dịch vụ",
     href: "/dich-vu",
+    children: [
+      {
+        label: "Landing Page",
+        href: "/dich-vu/landing-page",
+      },
+      {
+        label: "Website Doanh nghiệp",
+        href: "/dich-vu/website-doanh-nghiep",
+      },
+      {
+        label: "Website Thương mại",
+        href: "/dich-vu/website-thuong-mai",
+      },
+      {
+        label: "Thiết kế theo yêu cầu",
+        href: "/dich-vu/thiet-ke-theo-yeu-cau",
+      },
+    ],
   },
   {
     label: "Dự án",
@@ -16,13 +48,17 @@ export const mainMenu = [
     label: "Tin tức",
     href: "/tin-tuc",
   },
+  {
+    label: "Liên hệ",
+    href: "/lien-he",
+  },
 ];
 
 export const servicesMenu = [
   {
     label: "Landing Page",
     description: "Landing Page",
-    href: "/",
+    href: "/dich-vu/landing-page",
   },
   {
     label: "Website Doanh nghiệp",
