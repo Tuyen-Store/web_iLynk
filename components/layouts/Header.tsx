@@ -7,11 +7,11 @@ import { cn } from "@/lib/utils";
 import { mainMenu } from "@/types/menu.config";
 import { siteConfig } from "@/types/site.config";
 
-import { NavMenuLink } from "@/components/nav/NavMenuLink";
+import { NavMenuLink } from "@/components/ui/NavMenuLink";
 import { DesktopHide, DesktopShow } from "@/components/craft";
 
 import { ButtonIconCall } from "@/components/ui/ButtonIconCall";
-import Sidebar from "@/components/ui/Sidebar";
+import Sidebar from "@/components/layouts/Sidebar";
 import LogoElement from "@/components/ui/Logo";
 import LinkIcon from "@/components/ui/LinkIcon";
 import Icon from "@/components/ui/Icon";
@@ -166,11 +166,12 @@ export default function Header({ className, id }: NavProps) {
                 </div>
               </button>
             )}
-            <Sidebar open={openMenu} onClose={() => setOpenMenu(false)}>
-              <SidebarInner />
-            </Sidebar>
           </div>
         </DesktopShow>
+
+        <Sidebar open={openMenu} onClose={() => setOpenMenu(false)}>
+          <SidebarInner />
+        </Sidebar>
 
         <DesktopHide>
           <button
@@ -185,14 +186,15 @@ export default function Header({ className, id }: NavProps) {
               </div>
             </div>
           </button>
-          <Sidebar
-            open={openMenuMobile}
-            onClose={() => setOpenMenuMobile(false)}
-            side="left"
-          >
-            <SidebarMobile />
-          </Sidebar>
         </DesktopHide>
+
+        <Sidebar
+          open={openMenuMobile}
+          onClose={() => setOpenMenuMobile(false)}
+          side="left"
+        >
+          <SidebarMobile />
+        </Sidebar>
       </div>
     </nav>
   );
@@ -256,12 +258,7 @@ export function SidebarInner() {
         <h3 className="text-2xl font-medium text-heading">Về chúng tôi</h3>
         <div className="w-full h-px bg-input"></div>
         <span className="text-body text-sm mt-4 text-justify">
-          Công ty TNHH Acacy là một đơn vị chuyên cung cấp giải pháp nhân sự (HR
-          outsourcing), tư vấn quản lý và tuyển dụng, đặc biệt mạnh trong lĩnh
-          vực Hàng tiêu dùng nhanh (FMCG), sản xuất, phân phối, điện tử, với các
-          đối tác lớn như Unilever, Pepsi, Samsung, Abbott, Heineken, và là đối
-          tác tuyển dụng Sales, trưng bày cho nhiều thương hiệu quốc tế tại Việt
-          Nam, hoạt động chính tại TP. HCM, Hà Nội và các tỉnh thành khác.
+         {siteConfig.site_description}
         </span>
       </div>
 
@@ -395,7 +392,8 @@ export function SidebarMobile() {
                               "opacity-0 translate-y-2",
                               isOpen && "opacity-100 translate-y-0",
                               "group/item ",
-                              isChildActive && "bg-primary/5 opacity-100 translate-y-0"
+                              isChildActive &&
+                                "bg-primary/5 opacity-100 translate-y-0"
                             )}
                             style={{ transitionDelay: `${idx * 60}ms` }}
                           >

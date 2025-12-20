@@ -180,8 +180,8 @@ const styles = {
   layout: {
     spacing: "[&>*+*]:mt-6",
     article: "max-w-prose",
-    container: "container mx-auto p-4 sm:p-8",
-    section: "py-8 md:py-12",
+    container: "container mx-auto p-0",
+    section: "py-8 md:py-12 px-4 sm:px-8",
     sectionHero: "min-h-[480px] lg:min-h-[80vh]",
 
   },

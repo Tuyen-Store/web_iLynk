@@ -7,6 +7,8 @@ const linkIconVariants = cva(
     variants: {
       variant: {
         default: "text-base text-heading group hover:text-primary",
+        light: "text-base text-heading group hover:text-primary text-white",
+        dark: "text-base text-heading group hover:text-primary",
       },
     },
   });
@@ -20,7 +22,7 @@ export default function LinkIcon({
   href: string;
   children: React.ReactNode;
   label: string;
-  variant?: "default";
+  variant?: "default" | "light" | "dark";
 }) {
   return (
     <Link href={href} className={linkIconVariants({ variant })}>

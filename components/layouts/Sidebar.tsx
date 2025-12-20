@@ -77,7 +77,7 @@ export default function Sidebar({
                   width={44}
                   height={44}
                   onClick={onClose}
-                  bgColor="bg-secondary "
+                  bgColor="bg-accent "
                 />
               </div>
 

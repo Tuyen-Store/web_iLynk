@@ -82,3 +82,19 @@ export const contentMenu = {
   tags: "/posts/tags",
   authors: "/posts/authors",
 };
+
+
+export const termsMenu = [
+  {
+    label: "Điều khoản sử dụng",
+    href: "/dieu-khoan-su-dung",
+  },
+  {
+    label: "Quyền riêng tư",
+    href: "/quyen-rieng-tu",
+  },
+  {
+    label: "Chính sách bảo mật",
+    href: "/chinh-sach-bao-mat",
+  },
+];

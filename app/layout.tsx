@@ -8,8 +8,8 @@ import { Analytics } from "@vercel/analytics/react";
 import { siteConfig } from "@/types/site.config";
 
 import type { Metadata } from "next";
-import Footer from "@/components/ui/Footer";
-import Header from "@/components/ui/Header";
+import Footer from "@/components/layouts/Footer";
+import Header from "@/components/layouts/Header";
 
 const font = localFont({
   src: [

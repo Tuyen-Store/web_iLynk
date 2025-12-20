@@ -12,6 +12,10 @@ import IconLocation from "@assets/icons/location_on.svg";
 import IconFacebook from "@assets/icons/facebook.svg";
 import IconInstagram from "@assets/icons/instagram.svg";
 import IconLinkedin from "@assets/icons/linkedin.svg";
+import IconMailOutline from "@assets/icons/mail-outline.svg";
+import IconPhoneOutline from "@assets/icons/phone-outline.svg";
+import IconMapOutline from "@assets/icons/map-outline.svg";
+import IconDoubleArrowUp from "@assets/icons/double_arrow_up.svg";
 
 export {
   Logo,
@@ -25,4 +29,8 @@ export {
   IconFacebook,
   IconInstagram,
   IconLinkedin,
+  IconMailOutline,
+  IconPhoneOutline,
+  IconMapOutline,
+  IconDoubleArrowUp,
 };
