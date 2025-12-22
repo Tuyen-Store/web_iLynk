@@ -7,6 +7,9 @@ import Image from "next/image";
 import FunFact from "@/components/home/FunFact";
 import WhyChoose from "@/components/home/WhyChoose";
 import Faq from "@/components/home/Faq";
+import Feedback from "@/components/home/Feedback";
+import WorkShocase from "@/components/home/WorkShocase";
+import Features from "@/components/home/Features";
 
 // This page is using the craft.tsx component and design system
 export default function Home() {
@@ -27,6 +30,9 @@ export default function Home() {
       <FunFact />
       <WhyChoose />
       <Faq />
+      <Feedback />
+      <WorkShocase />
+      <Features />
     </>
   );
 }
