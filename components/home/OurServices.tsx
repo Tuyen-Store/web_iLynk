@@ -11,6 +11,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import NavigationButtons from "@/components/ui/NavigationButtons";
+import HeadingGroup from "@/components/ui/HeadingGroup";
 
 export default function OurServices() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -22,18 +23,12 @@ export default function OurServices() {
       <div className="flex flex-col items-start justify-center gap-10">
         <div className="md:pt-20 px-4 md:px-12 pt-12 w-full">
           <div className="grid lg:grid-cols-[600px_1fr] grid-cols-1 gap-8 container mx-auto">
-            <div className="flex flex-col items-start justify-center gap-2">
-              <div className="flex items-center justify-start gap-2">
-                <h3 className="text-primary text-base uppercase font-medium">
-                  Dịch vụ của chúng tôi
-                </h3>
-                <div className="w-12 h-0.5 bg-primary"></div>
-              </div>
-              <h2 className="text-heading text-4xl md:text-[52px] leading-snug font-bold">
-                <AnimatedTextLeftToRight text="Dịch vụ chúng tôi đang" />
-                <AnimatedTextLeftToRight text="cung cấp cho khách hàng" />
-              </h2>
-            </div>
+           
+            <HeadingGroup subTitle="Dịch vụ của chúng tôi">
+              <AnimatedTextLeftToRight text="Dịch vụ chúng tôi đang" />
+              <AnimatedTextLeftToRight text="cung cấp cho khách hàng" />
+            </HeadingGroup>
+
             <div className="grid md:grid-cols-[7fr_5fr] grid-cols-1 gap-4 xl:pt-10 lg:pl-10">
               <p className="text-body text-base font-regular leading-relaxed">
                 Có rất nhiều biến đổi của các đoạn văn có sẵn nhưng phần lớn đã
@@ -46,7 +41,7 @@ export default function OurServices() {
             </div>
           </div>
         </div>
-        <div className="w-full mb:pt-12 pb-20">
+        <div className="w-full mb:pt-12 md:pb-20 pb-12">
           <Swiper
             modules={[Navigation, Pagination]}
             navigation={{
