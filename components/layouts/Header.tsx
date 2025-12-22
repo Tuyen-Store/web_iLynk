@@ -277,7 +277,7 @@ export function SidebarInner() {
         <div className="flex flex-col gap-4 pt-4">
           {contactItems.map((item) => (
             <LinkIcon key={item.href} href={item.href} label={item.label}>
-              <Icon icon={item.icon} iconSize={20} width={20} height={20} />
+              <Icon icon={item.icon} iconSize="w-5 h-5" />
             </LinkIcon>
           ))}
         </div>
@@ -287,9 +287,8 @@ export function SidebarInner() {
             <Icon
               key={item.href}
               icon={item.icon}
-              iconSize={18}
-              width={44}
-              height={44}
+              iconSize="w-5 h-5"
+              iconBoxSize="w-10 h-10"
               onClick={() => {
                 window.location.href = item.href;
               }}
@@ -353,9 +352,7 @@ export function SidebarMobile() {
                         >
                           <Icon
                             icon={IconChevronRight}
-                            iconSize={16}
-                            width={16}
-                            height={16}
+                            iconSize="w-4 h-4"
                             brightness={isOpen ? false : true}
                           />
                         </span>
