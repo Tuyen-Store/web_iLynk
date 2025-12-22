@@ -19,7 +19,6 @@ import {
 } from "@/types/icon";
 
 import { Image1, Image2, Pattern1, Scribble1 } from "@/types/image";
-import ButtonIcon from "../ui/ButtonIcon";
 
 const contactItems: Array<{
   href: string;
@@ -154,9 +153,7 @@ const Footer = () => {
                   >
                     <Icon
                       icon={item.icon}
-                      iconSize={28}
-                      width={28}
-                      height={28}
+                      iconSize="w-7 h-7"
                     />
                   </LinkIcon>
                 ))}
@@ -169,9 +166,7 @@ const Footer = () => {
           <div className="absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 bg-primary rounded-2xl w-14 h-14 flex items-center justify-center">
             <Icon
               icon={IconDoubleArrowUp}
-              iconSize={32}
-              width={32}
-              height={32}
+              iconSize="w-8 h-8"
               onClick={() => {
                 window.scrollTo({
                   top: 0,

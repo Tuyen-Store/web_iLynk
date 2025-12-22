@@ -73,15 +73,14 @@ export default function Sidebar({
               <div className="self-end">
                 <Icon
                   icon={IconClose}
-                  iconSize={16}
-                  width={44}
-                  height={44}
+                  iconSize="w-6 h-6"
                   onClick={onClose}
-                  bgColor="bg-accent "
+                  iconBoxSize="w-10 h-10"
+                  bgColor="bg-accent"
                 />
               </div>
 
-              <div className="px-6 flex flex-col gap-10 overflow-y-auto max-h-[calc(100vh-100px)] pb-10 no-scrollbar">
+              <div className="px-2 flex flex-col gap-10 overflow-y-auto max-h-[calc(100vh-100px)] pb-10 no-scrollbar">
                 {children}
               </div>
             </div>

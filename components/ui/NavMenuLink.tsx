@@ -72,13 +72,16 @@ export function NavMenuLink({
         )}
       </div>
 
-      {iconArrow && (
-        customArrowIcon ?? (
+      {iconArrow &&
+        (customArrowIcon ?? (
           <span className="ml-1 inline-flex rotate-0 transition-transform duration-200 ease-out group-hover:rotate-180">
-            <Icon icon={IconExpandMore} iconSize={16} width={16} height={16} />
+            <Icon
+              icon={IconExpandMore}
+              iconSize="w-4 h-4"
+              iconBoxSize="w-4 h-4"
+            />
           </span>
-        )
-      )}
+        ))}
     </Link>
   );
 }

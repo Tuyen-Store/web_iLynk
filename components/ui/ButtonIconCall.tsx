@@ -11,9 +11,8 @@ export function ButtonIconCall() {
         <div className="group-hover:opacity-75 transition-all">
           <Icon
             icon={PhoneFilled}
-            iconSize={24}
-            width={44}
-            height={44}
+            iconSize="w-6 h-6"
+            iconBoxSize="w-10 h-10"
             bgColor="bg-primary"
           />
         </div>

@@ -16,6 +16,7 @@ import IconMailOutline from "@assets/icons/mail-outline.svg";
 import IconPhoneOutline from "@assets/icons/phone-outline.svg";
 import IconMapOutline from "@assets/icons/map-outline.svg";
 import IconDoubleArrowUp from "@assets/icons/double_arrow_up.svg";
+import IconPlayArrow from "@assets/icons/play_arrow.svg";
 
 export {
   Logo,
@@ -33,4 +34,5 @@ export {
   IconPhoneOutline,
   IconMapOutline,
   IconDoubleArrowUp,
+  IconPlayArrow,
 };
