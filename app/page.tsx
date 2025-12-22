@@ -5,6 +5,7 @@ import OurServices from "@/components/home/OurServices";
 import { ElementBubble } from "@/types/image";
 import Image from "next/image";
 import FunFact from "@/components/home/FunFact";
+import WhyChoose from "@/components/home/WhyChoose";
 
 // This page is using the craft.tsx component and design system
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
       </div>
       <OurServices />
       <FunFact />
+      <WhyChoose />
     </>
   );
 }

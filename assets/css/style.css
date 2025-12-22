@@ -58,7 +58,7 @@
   width: 16px;
 }
 
-#tm-nav-mobile {
+#iLynk-nav-mobile {
   position: absolute;
   top: 50%;
   right: 15px;
@@ -70,14 +70,14 @@
   flex-wrap: wrap;
   align-items: center;
 }
-#tm-nav-mobile .tm-nav-mobile-button {
+#iLynk-nav-mobile .iLynk-nav-mobile-button {
   width: 34px;
   height: 20px;
   position: relative;
   cursor: pointer;
 }
-#tm-nav-mobile .tm-nav-mobile-button:before, #tm-nav-mobile .tm-nav-mobile-button:after,
-#tm-nav-mobile .tm-nav-mobile-button span {
+#iLynk-nav-mobile .iLynk-nav-mobile-button:before, #iLynk-nav-mobile .iLynk-nav-mobile-button:after,
+#iLynk-nav-mobile .iLynk-nav-mobile-button span {
   content: "";
   background-color: var(--color-body);
   height: 2px;
@@ -87,19 +87,19 @@
   margin: auto;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-#tm-nav-mobile .tm-nav-mobile-button:before {
+#iLynk-nav-mobile .iLynk-nav-mobile-button:before {
   top: 0;
   width: 24px;
 }
-#tm-nav-mobile .tm-nav-mobile-button:after {
+#iLynk-nav-mobile .iLynk-nav-mobile-button:after {
   bottom: 0;
   width: 24px;
 }
-#tm-nav-mobile .tm-nav-mobile-button span {
+#iLynk-nav-mobile .iLynk-nav-mobile-button span {
   top: 9px;
   width: 100%;
 }
-#tm-nav-mobile .tm-nav-mobile-button.active:before, #tm-nav-mobile .tm-nav-mobile-button.active:after {
+#iLynk-nav-mobile .iLynk-nav-mobile-button.active:before, #iLynk-nav-mobile .iLynk-nav-mobile-button.active:after {
   width: 100%;
 }
 
@@ -107,6 +107,36 @@ button {
   cursor: pointer;
 }
 
+.image-hover-effect-shine::before {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  display: block;
+  content: "";
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
+  transform: skewX(-25deg);
+  transition: all 0.3s ease;
+}
+.image-hover-effect-shine:hover::before {
+  animation: shine 1s;
+}
+
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+.iLynk-animation-spin {
+  animation: 10s linear 0s infinite normal none running iLynk-animation-spin;
+}
+
+@keyframes iLynk-animation-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .card-overlay {
   position: absolute;
   inset: 0;

@@ -12,7 +12,8 @@ import ElementBubble2 from "@assets/images/element-bubble-2.png";
 import ElementBubble3 from "@assets/images/element-bubble-3.png";
 import ElementBubble4 from "@assets/images/element-bubble-4.png";
 import ElementBubble5 from "@assets/images/element-bubble-5.png";
-
+import WhyChoose1 from "@assets/images/why-choose-1.png";
+import WhyChoose2 from "@assets/images/why-choose-2.png";
 export {
   Image1,
   Image2,
@@ -28,4 +29,6 @@ export {
   ElementBubble4,
   ElementBubble5,
   Pattern2,
+  WhyChoose1,
+  WhyChoose2,
 };

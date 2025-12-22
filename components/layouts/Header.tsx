@@ -179,8 +179,8 @@ export default function Header({ className, id }: NavProps) {
             aria-label="Open menu"
           >
             <div className="relative">
-              <div id="tm-nav-mobile">
-                <div className="tm-nav-mobile-button">
+              <div id="iLynk-nav-mobile">
+                <div className="iLynk-nav-mobile-button">
                   <span></span>
                 </div>
               </div>

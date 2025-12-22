@@ -83,6 +83,18 @@ const fontIconLineariconsFree = localFont({
   display: "block",
 });
 
+const fontIconCommon = localFont({
+  src: [
+    {
+      path: "../assets/fonts/FlaticonCommon/flaticons-common.ttf",
+      weight: "normal",
+      style: "normal",
+    },
+  ],
+  variable: "--font-flaticon-common",
+  display: "block",
+});
+
 export const metadata: Metadata = {
   title: "iLynk - Digital Agency",
   description:
@@ -106,7 +118,8 @@ export default function RootLayout({
           "min-h-screen font-sans antialiased",
           font.variable,
           fontIconFlaticon.variable,
-          fontIconLineariconsFree.variable
+          fontIconLineariconsFree.variable,
+          fontIconCommon.variable
         )}
       >
         <SmoothScrollProvider>

@@ -30,7 +30,7 @@ export default function OurServices() {
             </HeadingGroup>
 
             <div className="grid md:grid-cols-[7fr_5fr] grid-cols-1 gap-4 xl:pt-10 lg:pl-10">
-              <p className="text-body text-base font-regular leading-relaxed">
+              <p className="text-body-style">
                 Có rất nhiều biến đổi của các đoạn văn có sẵn nhưng phần lớn đã
                 bị thay đổi theo một hình thức, bởi sự thêm vào của con người
                 ngẫu nhiên
