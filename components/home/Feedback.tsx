@@ -1,23 +1,23 @@
-"use client";
+'use client';
 
-import { useRef } from "react";
-import Image from "next/image";
+import { useRef } from 'react';
+import Image from 'next/image';
 
-import { motion, useInView } from "framer-motion";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { motion, useInView } from 'framer-motion';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
 
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-import NavigationButtons from "@/components/ui/NavigationButtons";
-import HeadingGroup from "@/components/ui/HeadingGroup";
-import { Project4 } from "@/types/image";
+import NavigationButtons from '@/components/ui/NavigationButtons';
+import HeadingGroup from '@/components/ui/HeadingGroup';
+import { Project4 } from '@/types/image';
 
-import { AnimatedTextLeftToRight } from "@/components/animation/AnimatedTextLeftToRight";
-import { IconStar } from "@/types/icon";
-import Icon from "@/components/ui/Icon";
+import { AnimatedTextLeftToRight } from '@/components/animation/AnimatedTextLeftToRight';
+import { IconStar } from '@/types/icon';
+import Icon from '@/components/ui/Icon';
 
 export default function Feedback() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -25,26 +25,26 @@ export default function Feedback() {
   const animatedOnceRef = useRef<Set<number>>(new Set());
 
   return (
-    <section ref={sectionRef} className="pt-12 md:pt-20 px-4 md:px-12">
-      <div className="relative overflow-hidden bg-secondary rounded-4xl px-4">
-        <div className="container flex flex-col items-center justify-center gap-10 z-2 md:pt-32 pt-12 relative">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+    <section ref={sectionRef} className="px-4 pt-12 md:px-12 md:pt-20">
+      <div className="bg-secondary relative overflow-hidden rounded-4xl px-4">
+        <div className="relative z-2 container flex flex-col items-center justify-center gap-10 pt-12 md:pt-32">
+          <div className="grid grid-cols-1 items-center gap-4 md:grid-cols-2">
             <HeadingGroup subTitle="Ý kiến khách hàng" textColor="light">
               <div className="mx-auto">
                 <AnimatedTextLeftToRight text="Những gì khách hàng nói về chúng tôi" />
               </div>
             </HeadingGroup>
-            <div className="md:ml-auto mr-auto md:mr-0">
+            <div className="mr-auto md:mr-0 md:ml-auto">
               <NavigationButtons />
             </div>
           </div>
 
-          <div className="w-full mb:pt-12 md:pb-20 pb-12">
+          <div className="mb:pt-12 w-full pb-12 md:pb-20">
             <Swiper
               modules={[Navigation, Pagination]}
               navigation={{
-                prevEl: ".our-services-swiper-prev",
-                nextEl: ".our-services-swiper-next",
+                prevEl: '.our-services-swiper-prev',
+                nextEl: '.our-services-swiper-next',
               }}
               pagination={false}
               watchSlidesProgress
@@ -79,32 +79,38 @@ export default function Feedback() {
                           delay: index * 0.12,
                         }}
                       >
-                        <div className="flex flex-col gap-8 p-7 bg-heading rounded-2xl">
-                          <div className="flex flex-row gap-4 items-center">
+                        <div className="bg-heading flex flex-col gap-8 rounded-2xl p-7">
+                          <div className="flex flex-row items-center gap-4">
                             <Image
                               src={Project4}
                               alt="Feedback"
                               width={100}
                               height={100}
-                              className="rounded-full w-14 h-14 object-cover"
+                              className="h-14 w-14 rounded-full object-cover"
                             />
-                            <div className="flex flex-col ">
+                            <div className="flex flex-col">
                               <h3 className="text-xl font-medium text-white">
                                 John Doe
                               </h3>
-                              <p className="text-sm text-body">
+                              <p className="text-body text-sm">
                                 Founder & Leader
                               </p>
                             </div>
                           </div>
-                          <p className="md:text-xl text-base text-white">
+                          <p className="text-base text-white md:text-xl">
                             Gần đây tôi đã hợp tác với Dixom trong dự án cải tạo
                             nhà của mình, và tôi vô cùng hài lòng với kết quả.
                           </p>
 
                           <div className="flex flex-row gap-0.5">
                             {Array.from({ length: 5 }).map((_, index) => (
-                              <Icon key={index} icon={IconStar} iconSize="w-5 h-5" iconBoxSize="w-5 h-5" bgColor="bg-none" />
+                              <Icon
+                                key={index}
+                                icon={IconStar}
+                                iconSize="w-5 h-5"
+                                iconBoxSize="w-5 h-5"
+                                bgColor="bg-none"
+                              />
                             ))}
                           </div>
                         </div>

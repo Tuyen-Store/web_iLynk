@@ -33,7 +33,7 @@
   .hamburger-inner:after,
   .hamburger-inner:before {
     display: block;
-    content: "";
+    content: '';
   }
 
   .hamburger-inner:before {
@@ -97,7 +97,7 @@
     &:before,
     &:after,
     span {
-      content: "";
+      content: '';
       background-color: var(--color-body);
       height: 2px;
       position: absolute;
@@ -139,7 +139,7 @@ button {
     top: 0;
     left: -100%;
     display: block;
-    content: "";
+    content: '';
     width: 50%;
     height: 100%;
     background: linear-gradient(
@@ -171,4 +171,3 @@ button {
     transform: rotate(360deg);
   }
 }
-

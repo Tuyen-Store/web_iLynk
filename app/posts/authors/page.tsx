@@ -1,16 +1,16 @@
-import { getAllAuthors } from "@/lib/wordpress";
-import { Section, Container, Prose } from "@/components/craft";
-import { Metadata } from "next";
-import BackButton from "@/components/BackButton";
-import Link from "next/link";
+import { getAllAuthors } from '@/lib/wordpress';
+import { Section, Container, Prose } from '@/components/craft';
+import { Metadata } from 'next';
+import BackButton from '@/components/BackButton';
+import Link from 'next/link';
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "All Authors",
-  description: "Browse all authors of our blog posts",
+  title: 'All Authors',
+  description: 'Browse all authors of our blog posts',
   alternates: {
-    canonical: "/posts/authors",
+    canonical: '/posts/authors',
   },
 };
 
@@ -26,7 +26,9 @@ export default async function Page() {
             <ul className="grid">
               {authors.map((author: any) => (
                 <li key={author.id}>
-                  <Link href={`/posts/?author=${author.id}`}>{author.name}</Link>
+                  <Link href={`/posts/?author=${author.id}`}>
+                    {author.name}
+                  </Link>
                 </li>
               ))}
             </ul>

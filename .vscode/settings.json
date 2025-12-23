@@ -1,5 +1,15 @@
 {
-  // Enable ESLint diagnostics in the Problems tab (Cursor/VSCode)
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[javascriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescriptreact]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[css]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[scss]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[mdx]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+
   "eslint.useFlatConfig": true,
   "eslint.run": "onType",
   "eslint.validate": [
@@ -8,17 +18,13 @@
     "typescript",
     "typescriptreact"
   ],
-  "eslint.workingDirectories": [
-    { "mode": "auto" }
-  ],
-  // TailwindCSS v4 uses custom at-rules (@theme, @utility, @custom-variant, @apply)
-  // The default CSS language service doesn't know them -> suppress noisy warnings.
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+
   "css.lint.unknownAtRules": "ignore",
   "scss.lint.unknownAtRules": "ignore",
   "less.lint.unknownAtRules": "ignore",
+
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   }
 }
-
-

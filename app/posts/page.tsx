@@ -6,7 +6,7 @@ import {
   searchAuthors,
   searchTags,
   searchCategories,
-} from "@/lib/wordpress";
+} from '@/lib/wordpress';
 
 import {
   Pagination,
@@ -15,21 +15,21 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "@/components/ui/Pagination";
+} from '@/components/ui/Pagination';
 
-import { Section, Container, Prose } from "@/components/craft";
-import { PostCard } from "@/components/posts/PostCard";
-import { FilterPosts } from "@/components/posts/FilterPosts";
-import { SearchInput } from "@/components/posts/SearchInput";
+import { Section, Container, Prose } from '@/components/craft';
+import { PostCard } from '@/components/posts/PostCard';
+import { FilterPosts } from '@/components/posts/FilterPosts';
+import { SearchInput } from '@/components/posts/SearchInput';
 
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Blog Posts",
-  description: "Browse all our blog posts",
+  title: 'Blog Posts',
+  description: 'Browse all our blog posts',
 };
 
-export const dynamic = "auto";
+export const dynamic = 'auto';
 export const revalidate = 600;
 
 export default async function Page({
@@ -64,12 +64,12 @@ export default async function Page({
   // Create pagination URL helper
   const createPaginationUrl = (newPage: number) => {
     const params = new URLSearchParams();
-    if (newPage > 1) params.set("page", newPage.toString());
-    if (category) params.set("category", category);
-    if (author) params.set("author", author);
-    if (tag) params.set("tag", tag);
-    if (search) params.set("search", search);
-    return `/posts${params.toString() ? `?${params.toString()}` : ""}`;
+    if (newPage > 1) params.set('page', newPage.toString());
+    if (category) params.set('category', category);
+    if (author) params.set('author', author);
+    if (tag) params.set('tag', tag);
+    if (search) params.set('search', search);
+    return `/posts${params.toString() ? `?${params.toString()}` : ''}`;
   };
 
   return (
@@ -79,8 +79,8 @@ export default async function Page({
           <Prose>
             <h2>All Posts</h2>
             <p className="text-muted-foreground">
-              {total} {total === 1 ? "post" : "posts"} found
-              {search && " matching your search"}
+              {total} {total === 1 ? 'post' : 'posts'} found
+              {search && ' matching your search'}
             </p>
           </Prose>
 
@@ -98,19 +98,19 @@ export default async function Page({
           </div>
 
           {posts.length > 0 ? (
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid gap-4 md:grid-cols-3">
               {posts.map((post) => (
                 <PostCard key={post.id} post={post} />
               ))}
             </div>
           ) : (
-            <div className="h-24 w-full border rounded-lg bg-accent/25 flex items-center justify-center">
+            <div className="bg-accent/25 flex h-24 w-full items-center justify-center rounded-lg border">
               <p>No posts found</p>
             </div>
           )}
 
           {totalPages > 1 && (
-            <div className="flex justify-center items-center py-8">
+            <div className="flex items-center justify-center py-8">
               <Pagination>
                 <PaginationContent>
                   {page > 1 && (

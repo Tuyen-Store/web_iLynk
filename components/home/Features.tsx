@@ -1,38 +1,38 @@
-import { Container, Section } from "@/components/craft";
-import HeadingGroup from "@/components/ui/HeadingGroup";
-import { AnimatedTextLeftToRight } from "@/components/animation/AnimatedTextLeftToRight";
+import { Container, Section } from '@/components/craft';
+import HeadingGroup from '@/components/ui/HeadingGroup';
+import { AnimatedTextLeftToRight } from '@/components/animation/AnimatedTextLeftToRight';
 
 export default function Features() {
   const features = [
     {
-      icon: "flaticon-business-3956725",
-      title: "Phát triển ứng dụng di động",
-      description: "Đề cập đến sự tích hợp giữa phần cứng và phần mềm.",
+      icon: 'flaticon-business-3956725',
+      title: 'Phát triển ứng dụng di động',
+      description: 'Đề cập đến sự tích hợp giữa phần cứng và phần mềm.',
     },
 
     {
-      icon: "flaticon-business-3956725",
-      title: "Phát triển ứng dụng di động",
-      description: "Đề cập đến sự tích hợp giữa phần cứng và phần mềm.",
+      icon: 'flaticon-business-3956725',
+      title: 'Phát triển ứng dụng di động',
+      description: 'Đề cập đến sự tích hợp giữa phần cứng và phần mềm.',
     },
 
     {
-      icon: "flaticon-business-3956725",
-      title: "Phát triển ứng dụng di động",
-      description: "Đề cập đến sự tích hợp giữa phần cứng và phần mềm.",
+      icon: 'flaticon-business-3956725',
+      title: 'Phát triển ứng dụng di động',
+      description: 'Đề cập đến sự tích hợp giữa phần cứng và phần mềm.',
     },
 
     {
-      icon: "flaticon-business-3956725",
-      title: "Phát triển ứng dụng di động",
-      description: "Đề cập đến sự tích hợp giữa phần cứng và phần mềm.",
+      icon: 'flaticon-business-3956725',
+      title: 'Phát triển ứng dụng di động',
+      description: 'Đề cập đến sự tích hợp giữa phần cứng và phần mềm.',
     },
   ];
   return (
     <Section>
       <Container>
         <div className="flex flex-col items-start justify-center gap-10">
-          <div className="grid lg:grid-cols-[1fr_512px] grid-cols-1 gap-8 md:gap-24 container mx-auto items-center">
+          <div className="container mx-auto grid grid-cols-1 items-center gap-8 md:gap-24 lg:grid-cols-[1fr_512px]">
             <HeadingGroup subTitle="Đặc trưng">
               <AnimatedTextLeftToRight text="Chúng tôi cung cấp dịch vụ hỗ trợ cho sự phát triển chiến lược." />
             </HeadingGroup>
@@ -44,32 +44,32 @@ export default function Features() {
             </p>
           </div>
 
-          <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-6 w-full">
+          <div className="grid w-full grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-6">
             {features.map((feature, index) => (
-              <div className="pb-12 flex w-full" key={index}>
+              <div className="flex w-full pb-12" key={index}>
                 <a
                   href="#"
-                  className="group relative bg-white shadow-[0px_7px_29px_0px_rgba(100,100,111,0.2)] rounded-2xl w-full"
+                  className="group relative w-full rounded-2xl bg-white shadow-[0px_7px_29px_0px_rgba(100,100,111,0.2)]"
                 >
-                  <div className="relative overflow-hidden px-9 py-9 pt-12 rounded-2xl ">
+                  <div className="relative overflow-hidden rounded-2xl px-9 py-9 pt-12">
                     <div className="card-overlay-2"></div>
 
                     <div className="relative z-2 pb-10">
                       <div className="front-icon relative w-max">
                         <i
                           aria-hidden="true"
-                          className={`${feature.icon} text-6xl text-body z-1`}
+                          className={`${feature.icon} text-body z-1 text-6xl`}
                         />
                       </div>
 
                       <div className="absolute -top-5 -right-5 opacity-10">
                         <i
                           aria-hidden="true"
-                          className={`${feature.icon} text-7xl text-body`}
+                          className={`${feature.icon} text-body text-7xl`}
                         />
                       </div>
 
-                      <h3 className="text-2xl font-bold mt-6 mb-6">
+                      <h3 className="mt-6 mb-6 text-2xl font-bold">
                         {feature.title}
                       </h3>
 
@@ -79,8 +79,8 @@ export default function Features() {
                     </div>
                   </div>
 
-                  <button className="bg-secondary rounded-full p-3 group flex items-center justify-center absolute -bottom-7 left-9 z-2">
-                    <i className="lnr-icon-arrow-right text-2xl text-white w-6 h-6 -rotate-45"></i>
+                  <button className="bg-secondary group absolute -bottom-7 left-9 z-2 flex items-center justify-center rounded-full p-3">
+                    <i className="lnr-icon-arrow-right h-6 w-6 -rotate-45 text-2xl text-white"></i>
                   </button>
                 </a>
               </div>

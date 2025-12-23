@@ -1,9 +1,9 @@
 @config "../tailwind.config.js";
-@import "tailwindcss";
-@import "../style.min.css";
-@import "../assets/css/style-flaticon.css";
-@import "../assets/css/style-linearicons-free.css";
-@import "../assets/css/flaticon-common.css";
+@import 'tailwindcss';
+@import '../style.min.css';
+@import '../assets/css/style-flaticon.css';
+@import '../assets/css/style-linearicons-free.css';
+@import '../assets/css/flaticon-common.css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -93,7 +93,7 @@
 @layer base {
   :root {
     --background: #ffffff;
-    --foreground: #130D1A;
+    --foreground: #130d1a;
 
     --card: #ffffff;
     --card-foreground: #0a0a0a;
@@ -201,9 +201,9 @@
 }
 
 .scrollbar-custom {
-  @apply max-h-100 overflow-y-auto [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-gray-200 [&::-webkit-scrollbar-thumb]:bg-primary;
+  @apply [&::-webkit-scrollbar-thumb]:bg-primary max-h-100 overflow-y-auto [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-gray-200;
 }
 
 .text-body-style {
-  @apply text-body text-base font-regular leading-relaxed;
+  @apply text-body font-regular text-base leading-relaxed;
 }

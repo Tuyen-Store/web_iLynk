@@ -1,9 +1,6 @@
 'use client';
 
-import {
-  motion,
-  AnimatePresence,
-} from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useState, ReactNode } from 'react';
 
 type PlayButtonProps = {
@@ -49,7 +46,7 @@ export default function PlayButton({
             >
               <button
                 onClick={() => setOpen(false)}
-                className="absolute z-10 flex h-9 w-9 right-0.5 top-0.5 items-center justify-center rounded-full bg-white p-2 text-black shadow-md hover:bg-gray-200"
+                className="absolute top-0.5 right-0.5 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-white p-2 text-black shadow-md hover:bg-gray-200"
                 aria-label="Close video"
               >
                 <svg

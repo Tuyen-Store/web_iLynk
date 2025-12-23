@@ -1,17 +1,14 @@
-"use client";
+'use client';
 
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import { useEffect } from "react";
+import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
+import { useEffect } from 'react';
 
 interface CountUpProps {
   value: number;
   duration?: number;
 }
 
-export function CountUp({
-  value,
-  duration = 1.6,
-}: CountUpProps) {
+export function CountUp({ value, duration = 1.6 }: CountUpProps) {
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
 

@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { cn } from "@/lib/utils";
-import { motion, Variants } from "framer-motion";
+import { cn } from '@/lib/utils';
+import { motion, Variants } from 'framer-motion';
 
 const textContainer = {
   hidden: {},
@@ -29,12 +29,12 @@ const letterVariant: Variants = {
 
 export function AnimatedTextLeftToRight({
   text,
-  gap = "",
-  align = "left",
+  gap = '',
+  align = 'left',
 }: {
   text: string;
   gap?: string;
-  align?: "left" | "center";
+  align?: 'left' | 'center';
 }) {
   return (
     <motion.span
@@ -43,18 +43,18 @@ export function AnimatedTextLeftToRight({
       whileInView="show"
       viewport={{ once: true, amount: 0.6 }}
       className={cn(
-        "flex flex-wrap",
+        'flex flex-wrap',
         gap,
-        align === "center" ? "justify-center" : "justify-start"
+        align === 'center' ? 'justify-center' : 'justify-start',
       )}
     >
-      {text.split("").map((char, index) => (
+      {text.split('').map((char, index) => (
         <motion.span
           key={index}
           variants={letterVariant}
           className="inline-block"
         >
-          {char === " " ? "\u00A0" : char}
+          {char === ' ' ? '\u00A0' : char}
         </motion.span>
       ))}
     </motion.span>

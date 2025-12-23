@@ -4,16 +4,14 @@ export default function NavigationButtons() {
       <button
         type="button"
         aria-label="Previous services"
-        className="our-services-swiper-prev flex items-center justify-center text-primary text-base p-4 rounded-full 
-        bg-white shadow-md hover:bg-primary hover:text-heading transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="our-services-swiper-prev text-primary hover:bg-primary hover:text-heading flex items-center justify-center rounded-full bg-white p-4 text-base shadow-md transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-50"
       >
         <i className="lnr-icon-arrow-left"></i>
       </button>
       <button
         type="button"
         aria-label="Next services"
-        className="our-services-swiper-next flex items-center justify-center text-primary text-base p-4 rounded-full 
-        bg-white shadow-md hover:bg-primary hover:text-heading transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="our-services-swiper-next text-primary hover:bg-primary hover:text-heading flex items-center justify-center rounded-full bg-white p-4 text-base shadow-md transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-50"
       >
         <i className="lnr-icon-arrow-right"></i>
       </button>

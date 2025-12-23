@@ -1,16 +1,16 @@
-import { getAllPages } from "@/lib/wordpress";
-import { Section, Container, Prose } from "@/components/craft";
-import { Metadata } from "next";
-import BackButton from "@/components/BackButton";
-import Link from "next/link";
+import { getAllPages } from '@/lib/wordpress';
+import { Section, Container, Prose } from '@/components/craft';
+import { Metadata } from 'next';
+import BackButton from '@/components/BackButton';
+import Link from 'next/link';
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "All Pages",
-  description: "Browse all pages of our blog posts",
+  title: 'All Pages',
+  description: 'Browse all pages of our blog posts',
   alternates: {
-    canonical: "/posts/pages",
+    canonical: '/posts/pages',
   },
 };
 
@@ -26,7 +26,9 @@ export default async function Page() {
             <ul className="grid">
               {pages.map((page: any) => (
                 <li key={page.id}>
-                  <Link href={`/pages/${page.slug}`}>{page.title.rendered}</Link>
+                  <Link href={`/pages/${page.slug}`}>
+                    {page.title.rendered}
+                  </Link>
                 </li>
               ))}
             </ul>

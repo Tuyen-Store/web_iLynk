@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { PropsWithChildren, useEffect } from "react";
-import Lenis from "lenis";
+import { PropsWithChildren, useEffect } from 'react';
+import Lenis from 'lenis';
 
 export default function SmoothScrollProvider({ children }: PropsWithChildren) {
   useEffect(() => {
     const reduceMotion =
-      typeof window !== "undefined" &&
-      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+      typeof window !== 'undefined' &&
+      window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 
     if (reduceMotion) return;
 
@@ -32,5 +32,3 @@ export default function SmoothScrollProvider({ children }: PropsWithChildren) {
 
   return <>{children}</>;
 }
-
-
