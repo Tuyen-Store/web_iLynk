@@ -25,15 +25,17 @@ export default function Feedback() {
   const animatedOnceRef = useRef<Set<number>>(new Set());
 
   return (
-    <section ref={sectionRef} className="px-4 pt-12 md:px-12 md:pt-20">
+    <section ref={sectionRef} className="px-2 pt-12 py-7 md:py-20">
       <div className="bg-secondary relative overflow-hidden rounded-4xl px-4">
         <div className="relative z-2 container flex flex-col items-center justify-center gap-10 pt-12 md:pt-32">
-          <div className="grid grid-cols-1 items-center gap-4 md:grid-cols-2">
-            <HeadingGroup subTitle="Ý kiến khách hàng" textColor="light">
-              <div className="mx-auto">
-                <AnimatedTextLeftToRight text="Những gì khách hàng nói về chúng tôi" />
-              </div>
-            </HeadingGroup>
+          <div className="w-full grid grid-cols-1 items-center gap-4 md:grid-cols-[9fr_3fr]">
+            <div className="md:max-w-148">
+              <HeadingGroup subTitle="Ý kiến khách hàng" textColor="light">
+                <div className="mx-auto">
+                  <AnimatedTextLeftToRight text="Những gì khách hàng nói về chúng tôi" />
+                </div>
+              </HeadingGroup>
+            </div>
             <div className="mr-auto md:mr-0 md:ml-auto">
               <NavigationButtons />
             </div>

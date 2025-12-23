@@ -19,7 +19,7 @@ export default function OurServices() {
   const animatedOnceRef = useRef<Set<number>>(new Set());
 
   return (
-    <section ref={sectionRef}>
+    <section ref={sectionRef} className="relative z-1">
       <div className="flex flex-col items-start justify-center gap-10">
         <div className="w-full px-4 pt-12 md:px-12 md:pt-20">
           <div className="container mx-auto grid grid-cols-1 gap-8 lg:grid-cols-[600px_1fr]">

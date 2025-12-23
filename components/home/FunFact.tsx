@@ -1,6 +1,5 @@
 import Image from 'next/image';
 
-import { Section } from '@/components/craft';
 import HeadingGroup from '@/components/ui/HeadingGroup';
 import { AnimatedTextLeftToRight } from '@/components/animation/AnimatedTextLeftToRight';
 import { CountUp } from '@/components/animation/CountUp';
@@ -35,22 +34,24 @@ export default function FunFact() {
   ];
 
   return (
-    <Section>
+    <section className="px-2 py-12 md:px-7 md:py-20">
       <div className="bg-heading relative overflow-hidden rounded-4xl">
         <div className="absolute top-0 left-0 z-1 h-full w-full bg-[radial-gradient(circle_400px,peru_0%,transparent_70%)] opacity-30 md:bg-[radial-gradient(circle_800px,peru_0%,transparent_70%)]" />
         <div className="relative z-2 flex flex-col items-center justify-center gap-10 px-4 pt-12 md:pt-32">
-          <HeadingGroup
-            subTitle="Sự thật thú vị"
-            align="center"
-            textColor="light"
-          >
-            <div className="mx-auto max-w-208">
-              <AnimatedTextLeftToRight
-                text="Chúng tôi cam kết tạo ra những trải nghiệm web công nghệ cao"
-                align="center"
-              />
-            </div>
-          </HeadingGroup>
+          <div className="z-1">
+            <HeadingGroup
+              subTitle="Sự thật thú vị"
+              align="center"
+              textColor="light"
+            >
+              <div className="mx-auto max-w-208">
+                <AnimatedTextLeftToRight
+                  text="Chúng tôi cam kết tạo ra những trải nghiệm web công nghệ cao"
+                  align="center"
+                />
+              </div>
+            </HeadingGroup>
+          </div>
 
           <div className="container grid w-full grid-cols-1 gap-6 pb-9 lg:grid-cols-3">
             {funFacts.map((item) => (
@@ -118,6 +119,6 @@ export default function FunFact() {
           </div>
         </div>
       </div>
-    </Section>
+    </section>
   );
 }

@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <div className="pb-10 md:pb-20">
+      <div className="pb-10 md:pb-20 z-1 relative">
         <VideoPlay />
       </div>
       <div className="relative">

@@ -19,7 +19,10 @@ export default function WorkShocase() {
         <div className="flex flex-col items-center justify-center gap-7 md:gap-14">
           <HeadingGroup subTitle="Trưng bày tác phẩm" align="center">
             <div className="mx-auto">
-              <AnimatedTextLeftToRight text="Kiểm tra mục trưng bày các tác phẩm mới nhất của bạn" />
+              <AnimatedTextLeftToRight
+                text="Kiểm tra mục trưng bày các tác phẩm mới nhất của bạn"
+                align="center"
+              />
             </div>
           </HeadingGroup>
 
@@ -51,7 +54,7 @@ export default function WorkShocase() {
                   alt="Work Shocase"
                   width={1000}
                   height={1000}
-                  className="h-96 w-full rounded-2xl object-cover md:h-180"
+                  className="h-96 w-full rounded-2xl object-cover md:h-120 lg:h-180"
                 />
 
                 <div

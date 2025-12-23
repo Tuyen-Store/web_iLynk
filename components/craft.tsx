@@ -181,7 +181,7 @@ const styles = {
     spacing: '[&>*+*]:mt-6',
     article: 'max-w-prose',
     container: 'container mx-auto p-0',
-    section: 'py-12 md:py-20 px-4 md:px-12',
+    section: 'px-4 py-12 md:px-12 md:py-20',
     sectionHero: 'min-h-[480px] lg:min-h-[80vh]',
   },
 };
