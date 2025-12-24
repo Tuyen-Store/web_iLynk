@@ -4,16 +4,16 @@ import {
   getAuthorById,
   getCategoryById,
   getAllPostSlugs,
-} from "@/lib/wordpress";
+} from '@/lib/wordpress';
 
-import { Section, Container, Article, Prose } from "@/components/craft";
-import { badgeVariants } from "@/components/ui/Badge";
-import { cn } from "@/lib/utils";
-import { siteConfig } from "@/types/site.config";
+import { Section, Container, Article, Prose } from '@/components/craft';
+import { badgeVariants } from '@/components/ui/Badge';
+import { cn } from '@/lib/utils';
+import { siteConfig } from '@/types/site.config';
 
-import Link from "next/link";
-import { notFound } from "next/navigation";
-import type { Metadata } from "next";
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
 
 export async function generateStaticParams() {
   return await getAllPostSlugs();
@@ -32,10 +32,10 @@ export async function generateMetadata({
   }
 
   const ogUrl = new URL(`${siteConfig.site_domain}/api/og`);
-  ogUrl.searchParams.append("title", post.title.rendered);
+  ogUrl.searchParams.append('title', post.title.rendered);
   // Strip HTML tags for description
-  const description = post.excerpt.rendered.replace(/<[^>]*>/g, "").trim();
-  ogUrl.searchParams.append("description", description);
+  const description = post.excerpt.rendered.replace(/<[^>]*>/g, '').trim();
+  ogUrl.searchParams.append('description', description);
 
   return {
     title: post.title.rendered,
@@ -43,7 +43,7 @@ export async function generateMetadata({
     openGraph: {
       title: post.title.rendered,
       description: description,
-      type: "article",
+      type: 'article',
       url: `${siteConfig.site_domain}/posts/${post.slug}`,
       images: [
         {
@@ -55,7 +55,7 @@ export async function generateMetadata({
       ],
     },
     twitter: {
-      card: "summary_large_image",
+      card: 'summary_large_image',
       title: post.title.rendered,
       description: description,
       images: [ogUrl.toString()],
@@ -79,10 +79,10 @@ export default async function Page({
     ? await getFeaturedMediaById(post.featured_media)
     : null;
   const author = await getAuthorById(post.author);
-  const date = new Date(post.date).toLocaleDateString("en-US", {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
+  const date = new Date(post.date).toLocaleDateString('en-US', {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
   });
   const category = await getCategoryById(post.categories[0]);
 
@@ -92,15 +92,15 @@ export default async function Page({
         <Prose>
           <h1>
             <span
-                dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-              ></span>
+              dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+            ></span>
           </h1>
-          <div className="flex justify-between items-center gap-4 text-sm mb-4">
+          <div className="mb-4 flex items-center justify-between gap-4 text-sm">
             <h5>
-              Published {date} by{" "}
+              Published {date} by{' '}
               {author.name && (
                 <span>
-                  <a href={`/posts/?author=${author.id}`}>{author.name}</a>{" "}
+                  <a href={`/posts/?author=${author.id}`}>{author.name}</a>{' '}
                 </span>
               )}
             </h5>
@@ -108,18 +108,18 @@ export default async function Page({
             <Link
               href={`/posts/?category=${category.id}`}
               className={cn(
-                badgeVariants({ variant: "outline" }),
-                "no-underline!"
+                badgeVariants({ variant: 'outline' }),
+                'no-underline!',
               )}
             >
               {category.name}
             </Link>
           </div>
           {featuredMedia?.source_url && (
-            <div className="h-96 my-12 md:h-[500px] overflow-hidden flex items-center justify-center border rounded-lg bg-accent/25">
-              {/* eslint-disable-next-line */}
+            <div className="bg-accent/25 my-12 flex h-96 items-center justify-center overflow-hidden rounded-lg border md:h-[500px]">
+              {}
               <img
-                className="w-full h-full object-cover"
+                className="h-full w-full object-cover"
                 src={featuredMedia.source_url}
                 alt={post.title.rendered}
               />

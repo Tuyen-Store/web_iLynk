@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import { useRouter } from "next/navigation";
-  import {
-    Select,
-    SelectContent,
-    SelectItem,
-    SelectTrigger,
-    SelectValue,
-  } from "@/components/ui/Select"; // Ensure this is the correct import path
-import { Button } from "@/components/ui/Button"; // Add this import for the Button component
+import { useRouter } from 'next/navigation';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/Select'; // Ensure this is the correct import path
+import { Button } from '@/components/ui/Button'; // Add this import for the Button component
 
 interface Author {
   id: number;
@@ -47,14 +47,14 @@ export function FilterPosts({
   const handleFilterChange = (type: string, value: string) => {
     console.log(`Filter changed: ${type} -> ${value}`);
     const newParams = new URLSearchParams(window.location.search);
-    newParams.delete("page");
-    value === "all" ? newParams.delete(type) : newParams.set(type, value);
+    newParams.delete('page');
+    value === 'all' ? newParams.delete(type) : newParams.set(type, value);
 
     router.push(`/posts?${newParams.toString()}`);
   };
 
   const handleResetFilters = () => {
-    router.push("/posts");
+    router.push('/posts');
   };
 
   const hasTags = tags.length > 0;
@@ -62,13 +62,13 @@ export function FilterPosts({
   const hasAuthors = authors.length > 0;
 
   return (
-    <div className="grid md:grid-cols-[1fr_1fr_1fr_0.5fr] gap-2 my-4 z-10!">
+    <div className="z-10! my-4 grid gap-2 md:grid-cols-[1fr_1fr_1fr_0.5fr]">
       <Select
-        value={selectedTag || "all"}
-        onValueChange={(value) => handleFilterChange("tag", value)}
+        value={selectedTag || 'all'}
+        onValueChange={(value) => handleFilterChange('tag', value)}
       >
         <SelectTrigger disabled={!hasTags}>
-          {hasTags ? <SelectValue placeholder="All Tags" /> : "No tags found"}
+          {hasTags ? <SelectValue placeholder="All Tags" /> : 'No tags found'}
         </SelectTrigger>
         <SelectContent>
           <SelectItem value="all">All Tags</SelectItem>
@@ -81,14 +81,14 @@ export function FilterPosts({
       </Select>
 
       <Select
-        value={selectedCategory || "all"}
-        onValueChange={(value) => handleFilterChange("category", value)}
+        value={selectedCategory || 'all'}
+        onValueChange={(value) => handleFilterChange('category', value)}
       >
         <SelectTrigger disabled={!hasCategories}>
           {hasCategories ? (
             <SelectValue placeholder="All Categories" />
           ) : (
-            "No categories found"
+            'No categories found'
           )}
         </SelectTrigger>
         <SelectContent>
@@ -102,14 +102,14 @@ export function FilterPosts({
       </Select>
 
       <Select
-        value={selectedAuthor || "all"}
-        onValueChange={(value) => handleFilterChange("author", value)}
+        value={selectedAuthor || 'all'}
+        onValueChange={(value) => handleFilterChange('author', value)}
       >
         <SelectTrigger disabled={!hasAuthors} className="text-center">
           {hasAuthors ? (
             <SelectValue placeholder="All Authors" />
           ) : (
-            "No authors found"
+            'No authors found'
           )}
         </SelectTrigger>
         <SelectContent>

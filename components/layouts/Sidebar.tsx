@@ -1,26 +1,24 @@
-"use client";
+'use client';
 
-import { motion, AnimatePresence } from "framer-motion";
-import { useEffect, type ReactNode } from "react";
+import { motion, AnimatePresence } from 'framer-motion';
+import { useEffect, type ReactNode } from 'react';
 
 type Props = {
   open: boolean;
   onClose: () => void;
   children: ReactNode;
-  side?: "left" | "right";
+  side?: 'left' | 'right';
 };
 
-import {
-  IconClose,
-} from "@/types/icon";
+import { IconClose } from '@/types/icon';
 
-import Icon from "@/components/ui/Icon";
+import Icon from '@/components/ui/Icon';
 
 export default function Sidebar({
   open,
   onClose,
   children,
-  side = "right",
+  side = 'right',
 }: Props) {
   useEffect(() => {
     if (!open) return;
@@ -34,8 +32,8 @@ export default function Sidebar({
 
     const scrollbarWidth = window.innerWidth - html.clientWidth;
 
-    html.style.overflow = "hidden";
-    body.style.overflow = "hidden";
+    html.style.overflow = 'hidden';
+    body.style.overflow = 'hidden';
 
     if (scrollbarWidth > 0) {
       body.style.paddingRight = `${scrollbarWidth}px`;
@@ -48,14 +46,14 @@ export default function Sidebar({
     };
   }, [open]);
 
-  const isLeft = side === "left";
+  const isLeft = side === 'left';
 
   return (
     <AnimatePresence>
       {open && (
         <>
           <motion.div
-            className="fixed inset-0 bg-black/40 z-40 h-screen"
+            className="fixed inset-0 z-40 h-screen bg-black/40"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -63,25 +61,24 @@ export default function Sidebar({
           />
 
           <motion.aside
-            className={`fixed top-0 ${isLeft ? "left-0" : "right-0"} w-[80%] max-w-sm bg-background z-50 shadow-lg h-screen`}
-            initial={{ x: isLeft ? "-100%" : "100%" }}
+            className={`fixed top-0 ${isLeft ? 'left-0' : 'right-0'} bg-background z-50 h-screen w-[80%] max-w-sm shadow-lg`}
+            initial={{ x: isLeft ? '-100%' : '100%' }}
             animate={{ x: 0 }}
-            exit={{ x: isLeft ? "-100%" : "100%" }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            exit={{ x: isLeft ? '-100%' : '100%' }}
+            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
           >
-            <div className="px-6 pt-6 flex flex-col gap-6 sidebar-innner-container">
+            <div className="sidebar-innner-container flex flex-col gap-6 px-6 pt-6">
               <div className="self-end">
                 <Icon
                   icon={IconClose}
-                  iconSize={16}
-                  width={44}
-                  height={44}
+                  iconSize="w-6 h-6"
                   onClick={onClose}
-                  bgColor="bg-secondary "
+                  iconBoxSize="w-10 h-10"
+                  bgColor="bg-accent"
                 />
               </div>
 
-              <div className="px-6 flex flex-col gap-10 overflow-y-auto max-h-[calc(100vh-100px)] pb-10 no-scrollbar">
+              <div className="no-scrollbar flex max-h-[calc(100vh-100px)] flex-col gap-10 overflow-y-auto px-2 pb-10">
                 {children}
               </div>
             </div>
@@ -91,5 +88,3 @@ export default function Sidebar({
     </AnimatePresence>
   );
 }
-
-
