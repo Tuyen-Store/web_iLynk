@@ -1,29 +1,29 @@
-"use client";
+'use client';
 
-import { cn } from "@/lib/utils";
-import { cva } from "class-variance-authority";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import Icon from "@/components/ui/Icon";
-import { IconExpandMore } from "@/types/icon";
+import { cn } from '@/lib/utils';
+import { cva } from 'class-variance-authority';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import Icon from '@/components/ui/Icon';
+import { IconExpandMore } from '@/types/icon';
 
 const menuLinkVariants = cva(
-  "relative flex items-center transition-colors duration-300 group",
+  'group relative flex items-center transition-colors duration-300',
   {
     variants: {
       variant: {
-        default: "text-base font-regular text-heading",
-        menuHeader: "text-base font-regular uppercase text-heading",
+        default: 'text-heading font-regular text-base',
+        menuHeader: 'text-heading font-regular text-base uppercase',
       },
       active: {
-        true: "",
-        false: "",
+        true: '',
+        false: '',
       },
     },
     defaultVariants: {
-      variant: "default",
+      variant: 'default',
     },
-  }
+  },
 );
 
 export function NavMenuLink({
@@ -31,13 +31,13 @@ export function NavMenuLink({
   children,
   underline = false,
   iconArrow = false,
-  variant = "default",
-  className = "",
+  variant = 'default',
+  className = '',
   customArrowIcon,
 }: {
   href: string;
   children: React.ReactNode;
-  variant?: "default" | "menuHeader";
+  variant?: 'default' | 'menuHeader';
   underline?: boolean;
   iconArrow?: boolean;
   className?: string;
@@ -54,7 +54,7 @@ export function NavMenuLink({
           variant: variant,
           active: isActive,
         }),
-        className
+        className,
       )}
     >
       <div className="relative">
@@ -63,10 +63,10 @@ export function NavMenuLink({
         {underline && (
           <span
             className={cn(
-              "absolute left-0 bottom-0 h-px w-full bg-heading",
-              "scale-x-0 origin-left transition-transform duration-300",
-              "group-hover:scale-x-100",
-              isActive && "scale-x-100"
+              'bg-heading absolute bottom-0 left-0 h-px w-full',
+              'origin-left scale-x-0 transition-transform duration-300',
+              'group-hover:scale-x-100',
+              isActive && 'scale-x-100',
             )}
           />
         )}

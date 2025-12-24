@@ -1,28 +1,26 @@
-import { cva } from "class-variance-authority";
-import Link from "next/link";
+import { cva } from 'class-variance-authority';
+import Link from 'next/link';
 
-const linkIconVariants = cva(
-  "flex items-center justify-start gap-3 group",
-  {
-    variants: {
-      variant: {
-        default: "text-base text-heading group hover:text-primary",
-        light: "text-base text-heading group hover:text-primary text-white",
-        dark: "text-base text-heading group hover:text-primary",
-      },
+const linkIconVariants = cva('group flex items-center justify-start gap-3', {
+  variants: {
+    variant: {
+      default: 'text-heading hover:text-primary group text-base',
+      light: 'text-heading hover:text-primary group text-base text-white',
+      dark: 'text-heading hover:text-primary group text-base',
     },
-  });
+  },
+});
 
 export default function LinkIcon({
   href,
   children,
   label,
-  variant = "default",
+  variant = 'default',
 }: {
   href: string;
   children: React.ReactNode;
   label: string;
-  variant?: "default" | "light" | "dark";
+  variant?: 'default' | 'light' | 'dark';
 }) {
   return (
     <Link href={href} className={linkIconVariants({ variant })}>

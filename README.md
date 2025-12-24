@@ -157,11 +157,11 @@ getPageBySlug(slug); // Page by slug
 ### Example Usage
 
 ```typescript
-import { getPostsPaginated } from "@/lib/wordpress";
+import { getPostsPaginated } from '@/lib/wordpress';
 
 const { data: posts, headers } = await getPostsPaginated(1, 9, {
-  category: "news",
-  search: "nextjs",
+  category: 'news',
+  search: 'nextjs',
 });
 
 console.log(`Found ${headers.total} posts across ${headers.totalPages} pages`);
@@ -186,9 +186,9 @@ Edit `site.config.ts` for site metadata:
 
 ```typescript
 export const siteConfig = {
-  site_name: "Your Site",
-  site_domain: "yourdomain.com",
-  site_description: "Your site description",
+  site_name: 'Your Site',
+  site_domain: 'yourdomain.com',
+  site_description: 'Your site description',
 };
 ```
 
@@ -198,8 +198,8 @@ Edit `menu.config.ts` for navigation links:
 
 ```typescript
 export const mainMenu = [
-  { href: "/", label: "Home" },
-  { href: "/posts", label: "Blog" },
+  { href: '/', label: 'Home' },
+  { href: '/posts', label: 'Blog' },
   // Add more links...
 ];
 ```
@@ -260,4 +260,5 @@ MIT License - see [LICENSE](LICENSE) for details.
 Built with [Next.js](https://nextjs.org/), [Tailwind CSS](https://tailwindcss.com/), [shadcn/ui](https://ui.shadcn.com/), and [brijr/craft](https://craft-ds.com).
 
 Created by [Bridger Tower](https://twitter.com/bridgertower) and [Cameron Youngblood](https://twitter.com/youngbloodcyb) at [9d8](https://9d8.dev).
+
 # web_iLynk

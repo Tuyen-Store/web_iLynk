@@ -1,18 +1,18 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const wordpressHostname = process.env.WORDPRESS_HOSTNAME;
 const wordpressUrl = process.env.WORDPRESS_URL;
 
 const nextConfig: NextConfig = {
-  output: "standalone",
+  output: 'standalone',
   images: {
     remotePatterns: wordpressHostname
       ? [
           {
-            protocol: "https",
+            protocol: 'https',
             hostname: wordpressHostname,
-            port: "",
-            pathname: "/**",
+            port: '',
+            pathname: '/**',
           },
         ]
       : [],
@@ -23,7 +23,7 @@ const nextConfig: NextConfig = {
     }
     return [
       {
-        source: "/admin",
+        source: '/admin',
         destination: `${wordpressUrl}/wp-admin`,
         permanent: true,
       },
