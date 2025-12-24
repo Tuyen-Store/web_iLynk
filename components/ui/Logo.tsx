@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import Image from "next/image";
+import Link from 'next/link';
+import Image from 'next/image';
 
-import { siteConfig } from "@/types/site.config";
-import { Logo } from "@/types/icon";
+import { siteConfig } from '@/types/site.config';
+import { Logo } from '@/types/icon';
 
 type LogoElementProps = {
   width?: number;
@@ -15,12 +15,12 @@ type LogoElementProps = {
 export default function LogoElement({
   width = 42,
   height = 28,
-  textSize = "text-sm",
+  textSize = 'text-sm',
 }: LogoElementProps) {
   return (
     <Link
       href="/"
-      className="hover:opacity-75 transition-all flex gap-4 items-center"
+      className="flex items-center gap-4 transition-all hover:opacity-75"
     >
       <Image
         src={Logo}

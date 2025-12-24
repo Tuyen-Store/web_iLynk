@@ -1,16 +1,16 @@
-import { getAllTags } from "@/lib/wordpress";
-import { Section, Container, Prose } from "@/components/craft";
-import { Metadata } from "next";
-import BackButton from "@/components/BackButton";
-import Link from "next/link";
+import { getAllTags } from '@/lib/wordpress';
+import { Section, Container, Prose } from '@/components/craft';
+import { Metadata } from 'next';
+import BackButton from '@/components/BackButton';
+import Link from 'next/link';
 
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
-  title: "All Tags",
-  description: "Browse all tags of our blog posts",
+  title: 'All Tags',
+  description: 'Browse all tags of our blog posts',
   alternates: {
-    canonical: "/posts/tags",
+    canonical: '/posts/tags',
   },
 };
 

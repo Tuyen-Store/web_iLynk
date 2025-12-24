@@ -1,28 +1,28 @@
-"use client";
+'use client';
 
 // React and Next Imports
-import * as React from "react";
-import Link, { LinkProps } from "next/link";
-import { useRouter, usePathname } from "next/navigation";
+import * as React from 'react';
+import Link, { LinkProps } from 'next/link';
+import { useRouter, usePathname } from 'next/navigation';
 
 // Utility Imports
-import { Menu } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Menu } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 // Component Imports
-import { Button } from "@/components/ui/Button";
-import { ScrollArea } from "@/components/ui/ScrollArea";
+import { Button } from '@/components/ui/Button';
+import { ScrollArea } from '@/components/ui/ScrollArea';
 import {
   Sheet,
   SheetContent,
   SheetTrigger,
   SheetTitle,
   SheetHeader,
-} from "@/components/ui/Sheet";
-import { Separator } from "@/components/ui/Separator";
+} from '@/components/ui/Sheet';
+import { Separator } from '@/components/ui/Separator';
 
-import { mainMenu } from "@/types/menu.config";
-import { siteConfig } from "@/types/site.config";
+import { mainMenu } from '@/types/menu.config';
+import { siteConfig } from '@/types/site.config';
 
 export function MobileNav() {
   const [open, setOpen] = React.useState(false);
@@ -33,7 +33,7 @@ export function MobileNav() {
       <SheetTrigger asChild>
         <Button
           variant="ghost"
-          className="px-0 border w-10 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
+          className="w-10 border px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
         >
           <Menu />
           <span className="sr-only">Toggle Menu</span>
@@ -51,7 +51,7 @@ export function MobileNav() {
             </MobileLink>
           </SheetTitle>
         </SheetHeader>
-        <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10 pr-4">
+        <ScrollArea className="my-4 h-[calc(100vh-8rem)] pr-4 pb-10">
           <div className="flex flex-col space-y-3">
             <h3 className="text-sx mt-6 uppercase">Menu</h3>
             <Separator />
@@ -60,8 +60,8 @@ export function MobileNav() {
                 key={item.href}
                 href={item.href}
                 onOpenChange={setOpen}
-                className={`py-2 px-4 rounded-md ${
-                  pathname === item.href ? "bg-accent" : ""
+                className={`rounded-md px-4 py-2 ${
+                  pathname === item.href ? 'bg-accent' : ''
                 }`}
               >
                 {item.label}
@@ -95,7 +95,7 @@ function MobileLink({
         router.push(href.toString());
         onOpenChange?.(false);
       }}
-      className={cn("text-md", className)}
+      className={cn('text-md', className)}
       {...props}
     >
       {children}
