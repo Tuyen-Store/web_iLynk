@@ -18,6 +18,10 @@ import IconMapOutline from '@assets/icons/map-outline.svg';
 import IconDoubleArrowUp from '@assets/icons/double_arrow_up.svg';
 import IconPlayArrow from '@assets/icons/play_arrow.svg';
 import IconStar from '@assets/icons/star.svg';
+import IconCalendarLinesAlt from '@assets/icons/calendar-lines-alt.svg';
+import IconCircleUser from '@assets/icons/circle-user.svg';
+import IconArrowNarrowRight from '@assets/icons/arrow-narrow-right.svg';
+import IconChatBubbles from '@assets/icons/chat-bubbles.svg';
 
 export {
   Logo,
@@ -37,4 +41,8 @@ export {
   IconDoubleArrowUp,
   IconPlayArrow,
   IconStar,
+  IconCalendarLinesAlt,
+  IconCircleUser,
+  IconArrowNarrowRight,
+  IconChatBubbles,
 };

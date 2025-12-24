@@ -12,17 +12,69 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import NavigationButtons from '@/components/ui/NavigationButtons';
 import HeadingGroup from '@/components/ui/HeadingGroup';
+import { Project4 } from '@/types/image';
 
 export default function OurServices() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const sectionInView = useInView(sectionRef, { once: true, amount: 0.2 });
   const animatedOnceRef = useRef<Set<number>>(new Set());
+  const defaultIcon = 'flaticon-business-008-health-check';
+
+  const services = [
+    {
+      title: 'Website doanh nghiệp Thương mại Điện tử (E-commerce)',
+      thumbnail: Project4,
+      icon: 'flaticon-business-008-health-check',
+      href: '/dich-vu/website-doanh-nghiep',
+    },
+
+    {
+      title: 'Website thương mại',
+      thumbnail: Project4,
+      icon: 'flaticon-business-008-health-check',
+      href: '/dich-vu/website-thuong-mai',
+    },
+
+    {
+      title: 'Thiết kế theo yêu cầu',
+      thumbnail: Project4,
+      icon: 'flaticon-business-008-health-check',
+      href: '/dich-vu/thiet-ke-theo-yeu-cau',
+    },
+
+    {
+      title: 'Landing Page',
+      thumbnail: Project4,
+      href: '/dich-vu/landing-page',
+    },
+
+    {
+      title: 'Tư vấn',
+      thumbnail: Project4,
+      icon: 'flaticon-business-008-health-check',
+      href: '/dich-vu/tu-van',
+    },
+
+    {
+      title: 'Quản trị mạng',
+      thumbnail: Project4,
+      icon: 'flaticon-business-008-health-check',
+      href: '/dich-vu/quan-tri-mang',
+    },
+
+    {
+      title: 'Quản trị máy chủ',
+      thumbnail: Project4,
+      icon: 'flaticon-business-008-health-check',
+      href: '/dich-vu/quan-tri-may-chu',
+    },
+  ];
 
   return (
     <section ref={sectionRef} className="relative z-1">
-      <div className="flex flex-col items-start justify-center gap-10">
+      <div className="gap-base-element">
         <div className="w-full px-4 pt-12 md:px-12 md:pt-20">
-          <div className="container mx-auto grid grid-cols-1 gap-8 lg:grid-cols-[600px_1fr]">
+          <div className="container mx-auto grid grid-cols-1 gap-7 lg:grid-cols-[600px_1fr]">
             <HeadingGroup subTitle="Dịch vụ của chúng tôi">
               <AnimatedTextLeftToRight text="Dịch vụ chúng tôi đang" />
               <AnimatedTextLeftToRight text="cung cấp cho khách hàng" />
@@ -34,7 +86,7 @@ export default function OurServices() {
                 bị thay đổi theo một hình thức, bởi sự thêm vào của con người
                 ngẫu nhiên
               </p>
-              <div className="ml-auto">
+              <div className="mr-auto md:mr-0 md:ml-auto">
                 <NavigationButtons />
               </div>
             </div>
@@ -57,7 +109,7 @@ export default function OurServices() {
               1024: { slidesPerView: 4, spaceBetween: 16 },
             }}
           >
-            {Array.from({ length: 6 }).map((_, index) => (
+            {services.map((service, index) => (
               <SwiperSlide key={index}>
                 {({ isVisible }) => {
                   const hasAnimated = animatedOnceRef.current.has(index);
@@ -80,7 +132,13 @@ export default function OurServices() {
                         delay: index * 0.12,
                       }}
                     >
-                      <ServiceCardItem />
+                      <ServiceCardItem
+                        number={String(index + 1).padStart(2, '0')}
+                        title={service.title}
+                        thumbnail={service.thumbnail}
+                        href={service.href}
+                        icon={service.icon ?? defaultIcon}
+                      />
                     </motion.div>
                   );
                 }}

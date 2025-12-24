@@ -43,7 +43,7 @@ export default function Faq() {
     <Section>
       <Container>
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-          <div className="flex flex-col gap-10 pr-0 lg:pr-10">
+          <div className="flex flex-col gap-7 md:gap-10 pr-0 lg:pr-10">
             <HeadingGroup subTitle="FAQ">
               <AnimatedTextLeftToRight text="Dẫn dắt công ty agency kỹ thuật số hàng đầu tại thành phố chúng ta" />
             </HeadingGroup>

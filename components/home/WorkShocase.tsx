@@ -16,7 +16,7 @@ export default function WorkShocase() {
   return (
     <Section>
       <div className="mx-auto max-w-[1600px]">
-        <div className="flex flex-col items-center justify-center gap-7 md:gap-14">
+        <div className="flex flex-col items-center justify-center gap-7 md:gap-10">
           <HeadingGroup subTitle="Trưng bày tác phẩm" align="center">
             <div className="mx-auto">
               <AnimatedTextLeftToRight

@@ -9,8 +9,9 @@ export default function Features() {
   const features = [
     {
       icon: 'flaticon-business-3956725',
-      title: 'Phát triển ứng dụng di động',
-      description: 'Đề cập đến sự tích hợp giữa phần cứng và phần mềm.',
+      title: 'Phát triển ứng dụng di động với React Native và TypeScript',
+      description:
+        'Đề cập đến sự tích hợp giữa phần cứng và phần mềm. Ví dụ: tích hợp giữa phần cứng và phần mềm. Ví dụ: tích hợp giữa phần cứng và phần mềm. Ví dụ: tích hợp giữa phần cứng và phần mềm. Ví dụ: tích hợp giữa phần cứng và phần mềm.',
     },
 
     {
@@ -47,8 +48,8 @@ export default function Features() {
         </div>
         <Section>
           <Container>
-            <div className="flex flex-col items-start justify-center gap-10">
-              <div className="container mx-auto grid grid-cols-1 items-center gap-8 lg:grid-cols-[1fr_512px] lg:gap-24">
+            <div className="gap-base-element">
+              <div className="container mx-auto grid grid-cols-1 items-center gap-7 lg:grid-cols-[1fr_512px] lg:gap-24">
                 <HeadingGroup subTitle="Đặc trưng">
                   <AnimatedTextLeftToRight text="Chúng tôi cung cấp dịch vụ hỗ trợ cho sự phát triển chiến lược" />
                 </HeadingGroup>
@@ -67,7 +68,7 @@ export default function Features() {
                       href="#"
                       className="group relative w-full rounded-2xl bg-white shadow-[0px_7px_29px_0px_rgba(100,100,111,0.2)]"
                     >
-                      <div className="relative overflow-hidden rounded-2xl px-9 py-9 pt-12">
+                      <div className="relative h-full overflow-hidden rounded-2xl px-9 py-9 pt-12">
                         <div className="card-overlay-2"></div>
 
                         <div className="relative z-2 pb-10">
@@ -85,11 +86,11 @@ export default function Features() {
                             />
                           </div>
 
-                          <h3 className="mt-6 mb-6 text-2xl font-bold">
+                          <h3 className="mt-6 mb-6 line-clamp-2 text-2xl font-bold">
                             {feature.title}
                           </h3>
 
-                          <p className="text-body-style group-hover:text-heading!">
+                          <p className="text-body-style group-hover:text-heading! line-clamp-4">
                             {feature.description}
                           </p>
                         </div>

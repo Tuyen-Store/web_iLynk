@@ -173,7 +173,7 @@ const Footer = () => {
             />
           </div>
         </div>
-        <Container className="not-prose flex flex-col justify-between gap-6 pt-6 md:flex-row md:items-center md:gap-2">
+        <Container className="not-prose flex flex-col-reverse justify-between gap-6 pt-6 md:flex-row md:items-center md:gap-2">
           <p className="text-body text-sm">
             © 2025 iLynk. All rights reserved.
           </p>

@@ -37,7 +37,7 @@ export default function FunFact() {
     <section className="px-2 py-12 md:px-7 md:py-20">
       <div className="bg-heading relative overflow-hidden rounded-4xl">
         <div className="absolute top-0 left-0 z-1 h-full w-full bg-[radial-gradient(circle_400px,peru_0%,transparent_70%)] opacity-30 md:bg-[radial-gradient(circle_800px,peru_0%,transparent_70%)]" />
-        <div className="relative z-2 flex flex-col items-center justify-center gap-10 px-4 pt-12 md:pt-32">
+        <div className="relative z-2 flex flex-col items-center justify-center gap-7 md:gap-10 px-4 pt-12 md:pt-32">
           <div className="z-1">
             <HeadingGroup
               subTitle="Sự thật thú vị"

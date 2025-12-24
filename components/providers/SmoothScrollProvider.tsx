@@ -1,9 +1,36 @@
 'use client';
 
-import { PropsWithChildren, useEffect } from 'react';
+import {
+  createContext,
+  PropsWithChildren,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+} from 'react';
 import Lenis from 'lenis';
 
+type SmoothScrollContextValue = {
+  lenis: Lenis | null;
+  stop: () => void;
+  start: () => void;
+};
+
+const SmoothScrollContext = createContext<SmoothScrollContextValue | null>(
+  null,
+);
+
+export function useSmoothScroll() {
+  const ctx = useContext(SmoothScrollContext);
+  if (!ctx) {
+    throw new Error('useSmoothScroll must be used within SmoothScrollProvider');
+  }
+  return ctx;
+}
+
 export default function SmoothScrollProvider({ children }: PropsWithChildren) {
+  const lenisRef = useRef<Lenis | null>(null);
+
   useEffect(() => {
     const reduceMotion =
       typeof window !== 'undefined' &&
@@ -16,6 +43,7 @@ export default function SmoothScrollProvider({ children }: PropsWithChildren) {
       syncTouch: false,
       lerp: 0.12,
     });
+    lenisRef.current = lenis;
 
     let rafId = 0;
     const raf = (time: number) => {
@@ -27,8 +55,23 @@ export default function SmoothScrollProvider({ children }: PropsWithChildren) {
     return () => {
       cancelAnimationFrame(rafId);
       lenis.destroy();
+      lenisRef.current = null;
     };
   }, []);
 
-  return <>{children}</>;
+  const value = useMemo<SmoothScrollContextValue>(() => {
+    return {
+      get lenis() {
+        return lenisRef.current;
+      },
+      stop: () => lenisRef.current?.stop(),
+      start: () => lenisRef.current?.start(),
+    };
+  }, []);
+
+  return (
+    <SmoothScrollContext.Provider value={value}>
+      {children}
+    </SmoothScrollContext.Provider>
+  );
 }

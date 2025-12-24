@@ -1,9 +1,5 @@
 .bg-linear-primary-top-bottom {
-  background-image: linear-gradient(
-    165deg,
-    var(--color-primary) 0%,
-    rgba(242, 41, 91, 0) 51%
-  );
+  background-image: linear-gradient(165deg, var(--color-primary) 0%, rgba(242, 41, 91, 0) 51%);
 }
 
 /* Hamburger Menu */
@@ -31,7 +27,7 @@
 .hamburger-box .hamburger-inner:after,
 .hamburger-box .hamburger-inner:before {
   display: block;
-  content: '';
+  content: "";
 }
 .hamburger-box .hamburger-inner:before {
   top: -9px;
@@ -48,9 +44,7 @@
 .hamburger-box .hamburger-inner:before {
   width: 24px;
 }
-.hamburger-box:hover .hamburger-inner,
-.hamburger-box:hover .hamburger-inner:after,
-.hamburger-box:hover .hamburger-inner:before {
+.hamburger-box:hover .hamburger-inner, .hamburger-box:hover .hamburger-inner:after, .hamburger-box:hover .hamburger-inner:before {
   height: 2px;
   background-color: var(--color-body);
 }
@@ -82,10 +76,9 @@
   position: relative;
   cursor: pointer;
 }
-#iLynk-nav-mobile .iLynk-nav-mobile-button:before,
-#iLynk-nav-mobile .iLynk-nav-mobile-button:after,
+#iLynk-nav-mobile .iLynk-nav-mobile-button:before, #iLynk-nav-mobile .iLynk-nav-mobile-button:after,
 #iLynk-nav-mobile .iLynk-nav-mobile-button span {
-  content: '';
+  content: "";
   background-color: var(--color-body);
   height: 2px;
   position: absolute;
@@ -106,8 +99,7 @@
   top: 9px;
   width: 100%;
 }
-#iLynk-nav-mobile .iLynk-nav-mobile-button.active:before,
-#iLynk-nav-mobile .iLynk-nav-mobile-button.active:after {
+#iLynk-nav-mobile .iLynk-nav-mobile-button.active:before, #iLynk-nav-mobile .iLynk-nav-mobile-button.active:after {
   width: 100%;
 }
 
@@ -120,14 +112,10 @@ button {
   top: 0;
   left: -100%;
   display: block;
-  content: '';
+  content: "";
   width: 50%;
   height: 100%;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.3) 100%
-  );
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 100%);
   transform: skewX(-25deg);
   transition: all 0.3s ease;
 }
@@ -149,26 +137,73 @@ button {
     transform: rotate(360deg);
   }
 }
+/* Glass Effect */
+.border-glass {
+  backdrop-filter: blur(6px);
+  /* ===== Hover / Active ===== */
+}
+.border-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  pointer-events: none;
+  background: linear-gradient(var(--angle), var(--c1) 0%, var(--c3) 33%, var(--c2) 62%, var(--c3) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: glass-spin 10s linear infinite;
+}
+.border-glass:hover::before {
+  --c1: #ffffff;
+  --c2: #aaaaaa;
+  --c3: #666666;
+  animation-duration: 7s;
+}
+
+@property --c1 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #dddddd;
+}
+@property --c2 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #555555;
+}
+@property --c3 {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #333333;
+}
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+/* ===== Animation ===== */
+@keyframes glass-spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}
 .card-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(39, 41, 46, 0.8) 100%
-  );
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(39, 41, 46, 0.8) 100%);
   z-index: 1;
   /* Overlay hover */
 }
 .card-overlay::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(255, 170, 23, 0.8) 73.56%
-  );
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(255, 170, 23, 0.8) 73.56%);
   transform: translateY(100%);
   transition: transform 0.4s ease;
 }
@@ -181,7 +216,7 @@ button {
   /* Overlay hover */
 }
 .card-overlay-2::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: var(--primary);
@@ -199,7 +234,7 @@ a:hover .card-overlay-2::after {
   border-bottom: 75px solid #f5f5f5;
   border-left: 0px solid transparent;
   border-right: 75px solid transparent;
-  content: '';
+  content: "";
   height: 0;
   position: absolute;
   width: 0;

@@ -171,3 +171,75 @@ button {
     transform: rotate(360deg);
   }
 }
+
+/* Glass Effect */
+.border-glass {
+  backdrop-filter: blur(6px);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    pointer-events: none;
+
+    background: linear-gradient(
+      var(--angle),
+      var(--c1) 0%,
+      var(--c3) 33%,
+      var(--c2) 62%,
+      var(--c3) 100%
+    );
+
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    animation: glass-spin 10s linear infinite;
+  }
+
+  /* ===== Hover / Active ===== */
+  &:hover::before {
+    --c1: #ffffff;
+    --c2: #aaaaaa;
+    --c3: #666666;
+    animation-duration: 7s;
+  }
+}
+
+@property --c1 {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #dddddd;
+}
+@property --c2 {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #555555;
+}
+@property --c3 {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #333333;
+}
+@property --angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
+/* ===== Animation ===== */
+@keyframes glass-spin {
+  from {
+    --angle: 0deg;
+  }
+  to {
+    --angle: 360deg;
+  }
+}

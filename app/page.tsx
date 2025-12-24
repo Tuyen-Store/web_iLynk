@@ -10,13 +10,18 @@ import Faq from '@/components/home/Faq';
 import Feedback from '@/components/home/Feedback';
 import WorkShocase from '@/components/home/WorkShocase';
 import Features from '@/components/home/Features';
+import OurTeam from '@/components/home/OurTeam';
+import HowItWork from '@/components/home/HowItWork';
+import GetInTouch from '@/components/home/GetInTouch';
+import Partners from '@/components/home/Partners';
+import Blogs from '@/components/home/Blogs';
 
 // This page is using the craft.tsx component and design system
 export default function Home() {
   return (
     <>
       <Hero />
-      <div className="pb-10 md:pb-20 z-1 relative">
+      <div className="relative z-2 pb-10 md:pb-20">
         <VideoPlay />
       </div>
       <div className="relative">
@@ -35,6 +40,11 @@ export default function Home() {
       <Feedback />
       <WorkShocase />
       <Features />
+      <OurTeam />
+      <HowItWork />
+      <GetInTouch />
+      <Partners />
+      <Blogs />
     </>
   );
 }

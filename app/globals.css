@@ -98,7 +98,7 @@
     --card: #ffffff;
     --card-foreground: #0a0a0a;
 
-    --popover: #ffffff;
+    --popover: #222429;
     --popover-foreground: #0a0a0a;
 
     --primary: #ffb01a;
@@ -206,4 +206,23 @@
 
 .text-body-style {
   @apply text-body font-regular text-base leading-relaxed;
+}
+
+.gap-base-element {
+  @apply flex flex-col items-start justify-center gap-7 md:gap-10;
+}
+
+/* Feedback Swiper: ép các card trong cùng 1 row cao bằng nhau */
+.feedback-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+
+.feedback-swiper .swiper-slide,
+.feedback-swiper-slide {
+  height: auto;
+  display: flex;
+}
+
+.feedback-swiper .swiper-slide > * {
+  width: 100%;
 }
